@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+    <bean id="helloWorld" class="com.ztx.qa.learnSpring.HelloWorld">
+        <property name="name" value="CcC"/>
+    </bean>
+
+    <bean id="car" class="com.ztx.qa.learnSpring.Car">
+        <constructor-arg value="BMW" index="0" type="java.lang.String">
+        </constructor-arg>
+        <constructor-arg value="Shang Hai" index="1" type="java.lang.String"/>
+        <constructor-arg value="200" index="2" type="int">
+        </constructor-arg>
+    </bean>
+
+    <bean id="car2" class="com.ztx.qa.learnSpring.Car">
+        <constructor-arg value="300000" index="2" type="double"/>
+        <constructor-arg index="1" type="java.lang.String">
+            <value><![CDATA[<Bei^Jing>]]></value>
+        </constructor-arg>
+        <constructor-arg value="Audi" index="0" type="java.lang.String"/>
+    </bean>
+
+    <bean id="person" class="com.ztx.qa.learnSpring.Person">
+        <property name="age" value="30"/>
+        <property name="name" value="Sam"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <bean id="person2" class="com.ztx.qa.learnSpring.Person">
+        <property name="age" value="20"/>
+        <property name="name" value="Carol"/>
+        <property name="car">
+            <bean class="com.ztx.qa.learnSpring.Car">
+                <constructor-arg value="MINI"/>
+                <constructor-arg value="ShangHai"/>
+                <constructor-arg value="350000" type="double"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="person3" class="com.ztx.qa.learnSpring.Person">
+        <constructor-arg value="Max"/>
+        <constructor-arg value="25"/>
+        <constructor-arg ref="car2"/>
+        <property name="car.maxSpeed" value="250"/>
+    </bean>
+
+    <bean id="people" class="com.ztx.qa.learnSpring.People">
+        <constructor-arg value="Tom"/>
+        <constructor-arg value="15"/>
+        <constructor-arg>
+            <list>
+                <ref bean="car"/>
+                <ref bean="car2"/>
+                <bean class="com.ztx.qa.learnSpring.Car">
+                    <constructor-arg value="Vovle"/>
+                    <constructor-arg value="Shang Hai"/>
+                    <constructor-arg value="350000"/>
+                    <constructor-arg value="230"/>
+                </bean>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="people2" class="com.ztx.qa.learnSpring.People">
+        <constructor-arg value="Mary"/>
+        <constructor-arg value="16"/>
+        <property name="cars">
+            <list>
+                <ref bean="car"/>
+            </list>
+        </property>
+        <property name="stringCarMap">
+            <map>
+                <entry key="1st" value-ref="car2"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="dataSource" class="com.ztx.qa.learnSpring.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123456</prop>
+                <prop key="key">abc</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="people3" class="com.ztx.qa.learnSpring.People" p:name="Jane" p:age="11" p:cars-ref="cars"/>
+
+    <util:list id="cars">
+        <ref bean="car"/>
+        <ref bean="car2"/>
+    </util:list>
+</beans>
