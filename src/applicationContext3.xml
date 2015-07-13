@@ -10,11 +10,18 @@
 
     <!--<bean class="com.ztx.qa.learnSpring3.MyBeanPostProcessor"/>-->
 
-    <bean id="phone1" class="com.ztx.qa.learnSpring3.StaticCarFactory" factory-method="getPhone">
+    <bean id="phone1" class="com.ztx.qa.learnSpring3.StaticPhoneFactory" factory-method="getPhone">
         <constructor-arg value="iOS"/>
     </bean>
+    <bean id="phone2" class="com.ztx.qa.learnSpring3.StaticPhoneFactory" factory-method="getPhone">
+        <constructor-arg value="Android"/>
+    </bean>
 
-    <bean id="phone2" class="com.ztx.qa.learnSpring3.StaticCarFactory" factory-method="getPhone">
+    <bean id="instancePhoneFactory" class="com.ztx.qa.learnSpring3.InstancePhoneFactory"/>
+    <bean id="phone3" factory-bean="instancePhoneFactory" factory-method="getPhone">
+        <constructor-arg value="iOS"/>
+    </bean>
+    <bean id="phone4" factory-bean="instancePhoneFactory" factory-method="getPhone">
         <constructor-arg value="Android"/>
     </bean>
 </beans>

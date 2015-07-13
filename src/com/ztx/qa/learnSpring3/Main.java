@@ -17,6 +17,11 @@ public class Main {
         phone = (Phone) applicationContext.getBean("phone2");
         System.out.println(phone);
 
+        phone = (Phone) applicationContext.getBean("phone3");
+        System.out.println(phone);
+        phone = (Phone) applicationContext.getBean("phone4");
+        System.out.println(phone);
+
         applicationContext.close();
     }
 }
