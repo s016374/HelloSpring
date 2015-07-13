@@ -15,5 +15,11 @@ public class Main {
 
         DataSource dataSource = applicationContext.getBean(DataSource.class);
         System.out.println(dataSource);
+
+        Car car = (Car) applicationContext.getBean("car2");
+        System.out.println(car);
+
+        person = (Person) applicationContext.getBean("person2");
+        System.out.println(person);
     }
 }

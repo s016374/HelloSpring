@@ -15,6 +15,9 @@
 
     <bean id="address" parent="addressAbstract" p:city="Su Zhou" p:street="Rd.Nan Jing"/>
 
+
+    <context:property-placeholder location="url.properties"/>
+
     <bean id="dataSource" class="com.ztx.qa.learnSpring2.DataSource">
         <property name="properties">
             <props>
@@ -25,5 +28,17 @@
         </property>
     </bean>
 
-    <context:property-placeholder location="url.properties"/>
+    <bean id="car2" class="com.ztx.qa.learnSpring2.Car">
+        <property name="brand" value="#{'Benz'}"/>
+        <property name="price" value="#{500000}"/>
+        <property name="tyrePerimeter" value="#{T(java.lang.Math).PI * 80}"/>
+    </bean>
+
+    <bean id="person2" class="com.ztx.qa.learnSpring2.Person">
+        <property name="name" value="#{'Jack'}"/>
+        <property name="car" value="#{car2}"/>
+        <property name="address" value="#{address}"/>
+        <property name="info" value="#{car2.price > 300000 ? '土豪' : '屌丝'}"/>
+    </bean>
+
 </beans>

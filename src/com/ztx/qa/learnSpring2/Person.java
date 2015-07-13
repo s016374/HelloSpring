@@ -7,6 +7,7 @@ public class Person {
     private String name;
     private Address address;
     private Car car;
+    private String info;
 
     public Person() {
     }
@@ -15,6 +16,13 @@ public class Person {
         this.name = name;
         this.address = address;
         this.car = car;
+    }
+
+    public Person(String name, Address address, Car car, String info) {
+        this.name = name;
+        this.address = address;
+        this.car = car;
+        this.info = info;
     }
 
     public String getName() {
@@ -41,12 +49,21 @@ public class Person {
         this.car = car;
     }
 
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", address=" + address +
                 ", car=" + car +
+                ", info='" + info + '\'' +
                 '}';
     }
 }

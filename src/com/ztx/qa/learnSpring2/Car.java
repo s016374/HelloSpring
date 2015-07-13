@@ -6,6 +6,7 @@ package com.ztx.qa.learnSpring2;
 public class Car {
     private String brand;
     private double price;
+    private double tyrePerimeter;
 
     public Car() {
     }
@@ -13,6 +14,12 @@ public class Car {
     public Car(double price, String brand) {
         this.price = price;
         this.brand = brand;
+    }
+
+    public Car(String brand, double price, double tyrePerimeter) {
+        this.brand = brand;
+        this.price = price;
+        this.tyrePerimeter = tyrePerimeter;
     }
 
     public String getBrand() {
@@ -31,11 +38,20 @@ public class Car {
         this.price = price;
     }
 
+    public double getTyrePerimeter() {
+        return tyrePerimeter;
+    }
+
+    public void setTyrePerimeter(double tyrePerimeter) {
+        this.tyrePerimeter = tyrePerimeter;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
                 "brand='" + brand + '\'' +
                 ", price=" + price +
+                ", tyrePerimeter=" + tyrePerimeter +
                 '}';
     }
 }

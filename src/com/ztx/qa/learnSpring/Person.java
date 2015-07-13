@@ -8,15 +8,6 @@ public class Person {
     private int age;
     private Car car;
 
-    public Person() {
-    }
-
-    public Person(String name, int age, Car car) {
-        this.name = name;
-        this.age = age;
-        this.car = car;
-    }
-
     public String getName() {
         return name;
     }
