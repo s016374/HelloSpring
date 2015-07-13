@@ -27,11 +27,4 @@ public class Car {
     public void destroy(){
         System.out.println("destroy......");
     }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                '}';
-    }
 }

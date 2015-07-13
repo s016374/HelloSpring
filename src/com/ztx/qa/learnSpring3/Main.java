@@ -8,8 +8,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String args[]) {
         ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext3.xml");
+
         Car car = (Car) applicationContext.getBean("car");
         System.out.println(car);
+
+        Phone phone = (Phone) applicationContext.getBean("phone1");
+        System.out.println(phone);
+        phone = (Phone) applicationContext.getBean("phone2");
+        System.out.println(phone);
+
         applicationContext.close();
     }
 }

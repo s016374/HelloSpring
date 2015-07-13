@@ -11,6 +11,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object o, String s) throws BeansException {
         System.out.println("postProcessBeforeInitialization\t" + o + "\t" + s);
+//        return o;
         car.setBrand("BMW");
         return car;
     }
@@ -18,6 +19,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object o, String s) throws BeansException {
         System.out.println("postProcessAfterInitialization\t" + o + "\t" + s);
+//        return 0;
         car.setBrand("Audi");
         return car;
     }
