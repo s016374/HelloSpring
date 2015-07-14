@@ -24,4 +24,9 @@
     <bean id="phone4" factory-bean="instancePhoneFactory" factory-method="getPhone">
         <constructor-arg value="Android"/>
     </bean>
+    
+    <bean id="factoryBean" class="com.ztx.qa.learnSpring3.FactoryBean">
+        <property name="brand" value="HTC"/>
+        <property name="price" value="2000"/>
+    </bean>
 </beans>
