@@ -20,6 +20,7 @@
           <file>file://$MODULE_DIR$/src/applicationContext3.xml</file>
           <file>file://$MODULE_DIR$/src/applicationContext4.xml</file>
           <file>file://$MODULE_DIR$/src/applicationContext5.xml</file>
+          <file>file://$MODULE_DIR$/src/applicationContext6.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -39,5 +40,7 @@
     <orderEntry type="library" name="Spring Batch-2.2.6" level="project" />
     <orderEntry type="library" name="Spring Webflow-2.4.0" level="project" />
     <orderEntry type="library" name="Spring MVC-4.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="aspectjrt-1.8.5" level="project" />
+    <orderEntry type="library" name="aspectjweaver-1.8.6" level="project" />
   </component>
 </module>
