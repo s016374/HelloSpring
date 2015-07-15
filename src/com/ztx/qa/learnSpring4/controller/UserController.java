@@ -1,6 +1,7 @@
 package com.ztx.qa.learnSpring4.controller;
 
 import com.ztx.qa.learnSpring4.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,8 +9,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class UserController {
+    @Autowired
     private UserService userService;
 
+    @Autowired
     public void execute() {
         System.out.println("UserController execute...");
         userService.add();
