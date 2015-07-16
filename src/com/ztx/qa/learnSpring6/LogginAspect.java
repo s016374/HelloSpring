@@ -3,6 +3,7 @@ package com.ztx.qa.learnSpring6;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import java.util.List;
  */
 @Component
 @Aspect
+@Order(2)
 public class LogginAspect {
     @Before("execution(* com.ztx.qa.learnSpring6.Calculator.*(..))")
     public void beforeMethod(JoinPoint joinPoint) {
