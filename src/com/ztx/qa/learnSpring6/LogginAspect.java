@@ -16,6 +16,11 @@ import java.util.List;
 @Aspect
 @Order(2)
 public class LogginAspect {
+    @Pointcut("execution(* com.ztx.qa.learnSpring6.Calculator.*(..))")
+    public void joinPointExpression() {
+
+    }
+
     @Before("execution(* com.ztx.qa.learnSpring6.Calculator.*(..))")
     public void beforeMethod(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
@@ -43,7 +48,7 @@ public class LogginAspect {
         System.out.println("afterThrowingMethod...methodName:[" + methodName + "],args:" + args + ",execption:[" + exception + "].");
     }
 
-    @Around("execution(* com.ztx.qa.learnSpring6.Calculator.*(..))")
+    @Around("joinPointExpression()")
     public Object aroundMethod(ProceedingJoinPoint proceedingJoinPoint) {
         Object result = null;
         String methodName = proceedingJoinPoint.getSignature().getName();

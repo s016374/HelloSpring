@@ -15,7 +15,7 @@ import java.util.Arrays;
 @Aspect
 @Order(1)
 public class ValidationAspect {
-    @Before("execution(* com.ztx.qa.learnSpring6.Calculator.*(..))")
+    @Before("LogginAspect.joinPointExpression()")
     public void validationMethod(JoinPoint joinPoint) {
         System.out.println("validationMethod...methodName:[" + joinPoint.getSignature().getName() + "],args:" + Arrays.asList(joinPoint.getArgs()));
     }
